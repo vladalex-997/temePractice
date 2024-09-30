@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./ex3.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex3</title>
+  </head>
+  <body>
+    <form method="POST">
+      <fieldset class="stylefieldset bcchoc">
+        <legend>Personal Details</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required />
+      </fieldset>
+
+      <fieldset class="stylefieldset bcteal">
+        <legend>Delivery Address</legend>
+        <textarea
+          id="address"
+          name="address"
+          placeholder="Enter your delivery address here..."
+          required
+        ></textarea>
+      </fieldset>
+
+      <fieldset class="stylefieldset bcsea">
+        <legend>Payment Details</legend>
+        <div class="payment-options">
+          <label>
+            <input type="radio" name="payment" value="visa" required />
+            <img src="./Visa.PNG" alt="Visa" />
+          </label>
+          <label>
+            <input type="radio" name="payment" value="mastercard" required />
+            <img src="./Mastercard.PNG" alt="MasterCard" />
+          </label>
+          <label>
+            <input type="radio" name="payment" value="applepay" required />
+            <img src="./Apple.PNG" alt="Apple Pay" />
+          </label>
+          <label>
+            <input type="radio" name="payment" value="paypal" required />
+            <img src="./Paypal.PNG" alt="PayPal" />
+          </label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
