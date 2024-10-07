@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: "Caveat", sans-serif;
+}
+
+.head {
+  display: flex;
+  background-color: purple;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  background-color: #011c32;
+  align-items: center;
+  height: 3rem;
+  margin: 5px 0 20px;
+}
+
+.nav ol {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 10px;
+}
+
+.nav a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: yellowgreen;
+}
+
+img {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  gap: 20px;
+}
+
+.marinelife,
+.foxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.marinelife {
+  width: 65vw;
+}
+
+.foxes {
+  width: 28vw;
+}
+
+.coral,
+.octopus,
+.foxlarge,
+.foxsmall {
+  padding: 10px;
+}
+
+.coral,
+.octopus {
+  background-color: #578ce1;
+}
+
+.foxlarge,
+.foxsmall {
+  background-color: #f8aa99;
+}
