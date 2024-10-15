@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(217, 54%, 11%);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  height: auto;
+  width: 20vw;
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 15px;
+}
+main .section-image {
+  position: relative;
+  overflow: hidden;
+}
+main .section-image img {
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+}
+main .section-image .view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 30%;
+  opacity: 0.8;
+  z-index: 3;
+}
+main .section-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(178, 100%, 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 15px;
+}
+main .section-image:active::before {
+  opacity: 0.5;
+  cursor: pointer;
+}
+main .section-image:active .view {
+  display: block;
+}
+main .section-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vh;
+}
+main .section-text p:nth-child(1) {
+  color: hsl(0, 0%, 100%);
+  font-size: 24px;
+  font-weight: 700;
+}
+main .section-text p:nth-child(1):active {
+  cursor: pointer;
+  color: hsl(178, 100%, 50%);
+}
+main .section-text p:nth-child(2) {
+  color: hsl(215, 51%, 70%);
+  font-size: 18px;
+}
+main .section-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .section-icons div {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+main .section-icons img {
+  width: 25px;
+  height: 25px;
+}
+main .section-icons p {
+  color: hsl(215, 51%, 70%);
+  font-size: 18px;
+}
+main .section-icons span {
+  color: hsl(178, 100%, 50%);
+  font-size: 18px;
+}
+main .section-line {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(215, 32%, 27%);
+}
+main .section-creator {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+main .section-creator img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+main .section-creator p {
+  color: hsl(215, 51%, 70%);
+  font-size: 18px;
+}
+main .section-creator p a {
+  text-decoration: none;
+  margin-left: 0.5vw;
+  color: hsl(0, 0%, 100%);
+}
+main .section-creator p a:active {
+  color: hsl(178, 100%, 50%);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary-color-soft-blue: hsl(215, 51%, 70%);
+$primary-color-cyan: hsl(178, 100%, 50%);
+$neutral-color-very-dark-blue-main-bg: hsl(217, 54%, 11%);
+$neutral-color-very-dark-blue-card-bg: hsl(216, 50%, 16%);
+$neutral-color-very-dark-blue-line: hsl(215, 32%, 27%);
+$neutral-color-white: hsl(0, 0%, 100%);
+
+body {
+  background-color: $neutral-color-very-dark-blue-main-bg;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  height: auto;
+  width: 20vw;
+  background-color: $neutral-color-very-dark-blue-card-bg;
+  border-radius: 15px;
+
+  .section-image {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .view {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      width: 30%;
+      opacity: 0.8;
+      z-index: 3;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primary-color-cyan;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+      border-radius: 15px;
+    }
+
+    &:active::before {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    &:active .view {
+      display: block;
+    }
+  }
+
+  .section-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+
+    p:nth-child(1) {
+      color: $neutral-color-white;
+      font-size: 24px;
+      font-weight: 700;
+
+      &:active {
+        cursor: pointer;
+        color: $primary-color-cyan;
+      }
+    }
+    p:nth-child(2) {
+      color: $primary-color-soft-blue;
+      font-size: 18px;
+    }
+  }
+
+  .section-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.5vw;
+    }
+    img {
+      width: 25px;
+      height: 25px;
+    }
+
+    p {
+      color: $primary-color-soft-blue;
+      font-size: 18px;
+    }
+
+    span {
+      color: $primary-color-cyan;
+      font-size: 18px;
+    }
+  }
+
+  .section-line {
+    width: 100%;
+    height: 1px;
+    background-color: $neutral-color-very-dark-blue-line;
+  }
+
+  .section-creator {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    p {
+      color: $primary-color-soft-blue;
+      font-size: 18px;
+
+      a {
+        text-decoration: none;
+        margin-left: 0.5vw;
+        color: $neutral-color-white;
+      }
+      a:active {
+        color: $primary-color-cyan;
+      }
+    }
+  }
+}
