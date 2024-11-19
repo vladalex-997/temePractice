@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work Days Array</title>
+  </head>
+  <body>
+    <h1>Work Days</h1>
+    <button id="showDaysButton">Show Work Days</button>
+    <script>
+      const workDays = [];
+      workDays[0] = "Monday";
+      workDays[1] = "Tuesday";
+      workDays[2] = "Wednesday";
+      workDays[3] = "Thursday";
+      workDays[4] = "Friday";
+
+      document
+        .getElementById("showDaysButton")
+        .addEventListener("click", () => {
+          console.log("Work Days:");
+          workDays.forEach((day, index) =>
+            console.log(`Day ${index + 1}: ${day}`)
+          );
+        });
+    </script>
+  </body>
+</html>

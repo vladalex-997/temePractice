@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alphabetical List</title>
+  </head>
+  <body>
+    <h2>Alphabetical Order</h2>
+    <div id="list"></div>
+
+    <script>
+      const items = [
+        "pomegranate",
+        "pomelo",
+        "pumpkin",
+        "rice",
+        "almonds",
+        "apple",
+        "avocado",
+        "caramel",
+        "corn",
+        "honey",
+        "lettuce",
+        "onion",
+        "peanut",
+        "sugar",
+      ];
+
+      const listContainer = document.getElementById("list");
+
+      items.sort().forEach((item) => {
+        const listItemDiv = document.createElement("div");
+        listItemDiv.textContent = item.charAt(0).toUpperCase() + item.slice(1);
+        listContainer.appendChild(listItemDiv);
+      });
+    </script>
+  </body>
+</html>
