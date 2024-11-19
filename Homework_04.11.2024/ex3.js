@@ -1,61 +1,72 @@
-function calculateSum() {
-  let num1 = parseFloat(document.getElementById("num1").value);
-  let num2 = parseFloat(document.getElementById("num2").value);
+document.addEventListener("DOMContentLoaded", () => {
+  const num1Input = document.getElementById("num1");
+  const num2Input = document.getElementById("num2");
+  const resultDisplay = document.getElementById("result");
 
-  if (isNaN(num1) || isNaN(num2)) {
-    document.getElementById("result").textContent =
-      "Please enter valid numbers.";
-    return;
-  }
+  const getInputs = () => {
+    const num1 = parseFloat(num1Input.value);
+    const num2 = parseFloat(num2Input.value);
 
-  let sum = num1 + num2;
-  document.getElementById("result").textContent = `Result: ${sum}`;
-}
+    if (isNaN(num1) || isNaN(num2)) {
+      resultDisplay.textContent = "Please enter valid numbers.";
+      return null;
+    }
 
-function calculateDifference() {
-  let num1 = parseFloat(document.getElementById("num1").value);
-  let num2 = parseFloat(document.getElementById("num2").value);
+    return { num1, num2 };
+  };
 
-  if (isNaN(num1) || isNaN(num2)) {
-    document.getElementById("result").textContent =
-      "Please enter valid numbers.";
-    return;
-  }
+  const calculateSum = () => {
+    const inputs = getInputs();
+    if (!inputs) return;
 
-  let difference = num1 - num2;
-  document.getElementById("result").textContent = `Result: ${difference}`;
-}
+    const { num1, num2 } = inputs;
+    const sum = num1 + num2;
+    resultDisplay.textContent = `Result: ${sum}`;
+  };
 
-function calculateMultiplication() {
-  let num1 = parseFloat(document.getElementById("num1").value);
-  let num2 = parseFloat(document.getElementById("num2").value);
+  const calculateDifference = () => {
+    const inputs = getInputs();
+    if (!inputs) return;
 
-  if (isNaN(num1) || isNaN(num2)) {
-    document.getElementById("result").textContent =
-      "Please enter valid numbers.";
-    return;
-  }
+    const { num1, num2 } = inputs;
+    const difference = num1 - num2;
+    resultDisplay.textContent = `Result: ${difference}`;
+  };
 
-  let multiplication = num1 * num2;
-  document.getElementById("result").textContent = `Result: ${multiplication}`;
-}
+  const calculateMultiplication = () => {
+    const inputs = getInputs();
+    if (!inputs) return;
 
-function calculateDivision() {
-  let num1 = parseFloat(document.getElementById("num1").value);
-  let num2 = parseFloat(document.getElementById("num2").value);
+    const { num1, num2 } = inputs;
+    const multiplication = num1 * num2;
+    resultDisplay.textContent = `Result: ${multiplication}`;
+  };
 
-  if (isNaN(num1) || isNaN(num2)) {
-    document.getElementById("result").textContent =
-      "Please enter valid numbers.";
-    return;
-  }
+  const calculateDivision = () => {
+    const inputs = getInputs();
+    if (!inputs) return;
 
-  if (num2 === 0) {
-    document.getElementById("result").textContent =
-      "Error: Cannot divide by zero.";
-    return;
-  }
+    const { num1, num2 } = inputs;
 
-  let division = num1 / num2;
-  document.getElementById("result").textContent = `Result: ${division}`;
-}
+    if (num2 === 0) {
+      resultDisplay.textContent = "Error: Cannot divide by zero.";
+      return;
+    }
+
+    const division = num1 / num2;
+    resultDisplay.textContent = `Result: ${division}`;
+  };
+
+  document
+    .querySelector("button:nth-of-type(1)")
+    .addEventListener("click", () => calculateSum());
+  document
+    .querySelector("button:nth-of-type(2)")
+    .addEventListener("click", () => calculateDifference());
+  document
+    .querySelector("button:nth-of-type(3)")
+    .addEventListener("click", () => calculateMultiplication());
+  document
+    .querySelector("button:nth-of-type(4)")
+    .addEventListener("click", () => calculateDivision());
+});
